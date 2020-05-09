@@ -8,12 +8,15 @@ function contar() {
     var passo = Number(passotxt)
 
     var res = document.querySelector('div#res')
-    var resultado = 0
+    var resultado = ''
 
-    for (inicio; inicio >= fim; inicio = inicio + passo) {
-        resultado += inicio
+    if (iniciotxt == '' || fimtxt == '' || passotxt == '' || passo == 0) {
+        resultado = 'Impossível contar!'
+    } else {
+        for (inicio; inicio <= fim; inicio = inicio + passo) {
+            resultado += String(inicio) + ' &#128073 '
+        }
+        resultado += '&#128681'
     }
-
-    res.innerHTML = String(resultado)
-    console.log(typeof(inicio))
+    res.innerHTML = resultado
 }
